@@ -1,4 +1,4 @@
-package dev.darshit.benchmark;
+package dev.darshit.benchmarks;
 
 import org.openjdk.jmh.annotations.*;
 import org.openjdk.jmh.runner.Runner;
@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
 @BenchmarkMode(Mode.Throughput)
 @OutputTimeUnit(TimeUnit.SECONDS)
 @Fork(2)
-public class EnumSetBenchMark {
+public class EnumSetBenchmark {
 
     public enum Week {
         SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY
@@ -73,7 +73,7 @@ public class EnumSetBenchMark {
 
     public static void main(String[] args) throws RunnerException
     {
-         Options options = new OptionsBuilder().include(".*" + EnumSetBenchMark.class.getSimpleName() + ".*")
+         Options options = new OptionsBuilder().include(".*" + EnumSetBenchmark.class.getSimpleName() + ".*")
                 .forks(2)
                 .warmupIterations(3)
                 .warmupTime(TimeValue.seconds(5L))
