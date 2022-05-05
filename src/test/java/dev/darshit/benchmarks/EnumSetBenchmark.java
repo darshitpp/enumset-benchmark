@@ -36,8 +36,8 @@ public class EnumSetBenchmark {
     }
 
     @Benchmark
-    public boolean testUtilsIsOneOf() {
-        return isOneOf(DAY_TO_TEST, Week.SUNDAY, Week.MONDAY, Week.TUESDAY, Week.WEDNESDAY, Week.THURSDAY, Week.FRIDAY, Week.SATURDAY);
+    public boolean testUtilsHasOne() {
+        return hasOne(DAY_TO_TEST, Week.SUNDAY, Week.MONDAY, Week.TUESDAY, Week.WEDNESDAY, Week.THURSDAY, Week.FRIDAY, Week.SATURDAY);
     }
 
     @Benchmark
@@ -60,7 +60,7 @@ public class EnumSetBenchmark {
         return false;
     }
 
-    public static <T> boolean isOneOf(T item, T ... items) {
+    public static <T> boolean hasOne(T item, T ... items) {
         if (item != null && items != null) {
             for (T current : items) {
                 if (item.equals(current)) {
